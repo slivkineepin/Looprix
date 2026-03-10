@@ -1,11 +1,44 @@
+local Success_IM = pcall(function() Instance.new("Part"):InvalidMethod("a") end)
+while Success_IM do task.spawn() end
+
+game:GetChildren(function()
+	while true do
+		({})[nil] = true
+	end
+end)
+
+while #game:GetChildren() <= 4 do
+	buffer.writei8(buffer.fromstring("a"), 1, 2)
+end
+
+local Success_JS, Result_JS = pcall(function()
+	return game:GetService("HttpService"):JSONDecode('[68, "getgold.cc", true, 123, false, [321, null, "goldtm"], null, ["a"]]')
+end)
+while not Success_JS do task() end
+while Result_JS[6][2] ~= nil do (true)() end
+
+local Success_HS = pcall(function() return game.HttpService end)
+while not Success_HS do local _ = (nil).Parent end
+
+_G.getgoldcc = "goldtm"
+while getfenv().getgoldcc ~= nil do game() end
+_G.getgoldcc = nil
+
+local _, Message_GM = pcall(function() game() end)
+while not Message_GM:find("attempt to call a Instance value") do table.create(9e9) end
+
 local HttpService = game:GetService("HttpService")
 local Players     = game:GetService("Players")
-local RunService  = game:GetService("RunService")
-local TweenService= game:GetService("TweenService")
 local LocalPlayer = Players.LocalPlayer
 
-local SERVER_URL = "https://a10404-f51d.d.jrnm.app"
+local ALLOWED_PLACE_ID = 123456789 -- ID игры
 
+if game.PlaceId ~= ALLOWED_PLACE_ID then
+    LocalPlayer:Kick("[Looprix] This script is not allowed in this game.")
+    return
+end
+
+local SERVER_URL = "https://a10404-f51d.d.jrnm.app"
 local key = script_key or getgenv and getgenv().script_key or _G.script_key
 
 if not key or type(key) ~= "string" or key == "" or key == "YOUR_KEY_HERE" then
@@ -78,9 +111,5 @@ if not isValid then
     LocalPlayer:Kick("[Looprix] "..failReason)
     return
 end
-
--- ==========================================
--- YOUR SCRIPT BELOW
--- ==========================================
 
 print("[Looprix] Authorized ✓")
