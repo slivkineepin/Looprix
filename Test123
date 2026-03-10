@@ -31,9 +31,9 @@ local HttpService = game:GetService("HttpService")
 local Players     = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
-local ALLOWED_PLACE_ID = 123456789 -- ID игры
+local PLACE_ID = 109983668079237
 
-if game.PlaceId ~= ALLOWED_PLACE_ID then
+if game.PlaceId ~= PLACE_ID then
     LocalPlayer:Kick("[Looprix] This script is not allowed in this game.")
     return
 end
