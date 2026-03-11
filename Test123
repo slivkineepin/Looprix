@@ -38,7 +38,7 @@ if game.PlaceId ~= PLACE_ID then
     return
 end
 
-local SERVER_URL = "https://a10404-f51d.d.jrnm.app"
+local SERVER_URL = "https://a10539-6722.e.jrnm.app"
 local key = script_key or getgenv and getgenv().script_key or _G.script_key
 
 if not key or type(key) ~= "string" or key == "" or key == "YOUR_KEY_HERE" then
