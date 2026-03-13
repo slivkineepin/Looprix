@@ -1,7 +1,7 @@
 local VALIDATE_URL   = "https://looprix-validate.slivkineepy.workers.dev"
 local SOURCE_URL     = "https://looprix-source.slivkineepy.workers.dev"
 local SCRIPT_ID      = "e8dbb2b4-4a7c-421d-9a4c-0904bc361979"
-local MAX_RETRIES    = 3
+local MAX_RETRIES    = 2
 local RETRY_DELAY    = 1
 
 local HttpService  = game:GetService("HttpService")
